@@ -156,3 +156,12 @@ AH00548: NameVirtualHost has no effect and will be removed in the next release C
 [Fri Mar 04 10:56:18.310800 2016] [:error] [pid 10864:tid 1332] [client ::1:61021] PHP  17. WP_Http_Curl->request() C:\\UwAmp\\www\\wordpress\\wp-includes\\class-http.php:367, referer: http://localhost:120/wordpress/wp-admin/setup-config.php
 [Fri Mar 04 10:56:18.310800 2016] [:error] [pid 10864:tid 1332] [client ::1:61021] PHP  18. curl_exec() C:\\UwAmp\\www\\wordpress\\wp-includes\\class-wp-http-curl.php:239, referer: http://localhost:120/wordpress/wp-admin/setup-config.php
 [Fri Mar 04 10:56:18.310800 2016] [:error] [pid 10864:tid 1332] [client ::1:61021] PHP  19. WP_Http_Curl->stream_body() C:\\UwAmp\\www\\wordpress\\wp-includes\\class-wp-http-curl.php:239, referer: http://localhost:120/wordpress/wp-admin/setup-config.php
+[Mon Mar 07 21:17:55.961708 2016] [core:warn] [pid 6408:tid 204] AH00098: pid file C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Mar 07 21:17:56.165523 2016] [ssl:warn] [pid 6408:tid 204] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Mon Mar 07 21:18:00.976967 2016] [mpm_winnt:notice] [pid 6408:tid 204] AH00455: Apache/2.4.10 (Win32) OpenSSL/1.0.1h PHP/5.4.31 configured -- resuming normal operations
+[Mon Mar 07 21:18:00.976967 2016] [mpm_winnt:notice] [pid 6408:tid 204] AH00456: Apache Haus VC9 Server built: Jul 15 2014 20:34:18
+[Mon Mar 07 21:18:00.976967 2016] [core:notice] [pid 6408:tid 204] AH00094: Command line: 'C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\bin\\apache\\bin\\httpd.exe -d C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache -f C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Mon Mar 07 21:18:00.980469 2016] [mpm_winnt:notice] [pid 6408:tid 204] AH00418: Parent: Created child process 2304
+AH00548: NameVirtualHost has no effect and will be removed in the next release C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache/conf/httpd.conf:264
+[Mon Mar 07 21:18:01.845163 2016] [ssl:warn] [pid 2304:tid 648] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Mon Mar 07 21:18:01.862180 2016] [mpm_winnt:notice] [pid 2304:tid 648] AH00354: Child: Starting 64 worker threads.
