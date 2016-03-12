@@ -165,3 +165,17 @@ AH00548: NameVirtualHost has no effect and will be removed in the next release C
 AH00548: NameVirtualHost has no effect and will be removed in the next release C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache/conf/httpd.conf:264
 [Mon Mar 07 21:18:01.845163 2016] [ssl:warn] [pid 2304:tid 648] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
 [Mon Mar 07 21:18:01.862180 2016] [mpm_winnt:notice] [pid 2304:tid 648] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 08 23:24:21.885836 2016] [core:warn] [pid 396:tid 648] AH00098: pid file C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Mar 08 23:24:22.131686 2016] [ssl:warn] [pid 396:tid 648] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Tue Mar 08 23:24:27.396082 2016] [mpm_winnt:notice] [pid 396:tid 648] AH00455: Apache/2.4.10 (Win32) OpenSSL/1.0.1h PHP/5.4.31 configured -- resuming normal operations
+[Tue Mar 08 23:24:27.417400 2016] [mpm_winnt:notice] [pid 396:tid 648] AH00456: Apache Haus VC9 Server built: Jul 15 2014 20:34:18
+[Tue Mar 08 23:24:27.417479 2016] [core:notice] [pid 396:tid 648] AH00094: Command line: 'C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\bin\\apache\\bin\\httpd.exe -d C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache -f C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\bin\\apache\\conf\\httpd.conf'
+[Tue Mar 08 23:24:27.418481 2016] [mpm_winnt:notice] [pid 396:tid 648] AH00418: Parent: Created child process 13104
+AH00548: NameVirtualHost has no effect and will be removed in the next release C:/Users/Pierre Rudelou/Documents/GitHub/ProjetTRansvarsal/UwAmp/bin/apache/conf/httpd.conf:264
+[Tue Mar 08 23:24:28.218988 2016] [ssl:warn] [pid 13104:tid 476] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Tue Mar 08 23:24:28.361321 2016] [mpm_winnt:notice] [pid 13104:tid 476] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 08 23:51:44.501003 2016] [:error] [pid 13104:tid 1308] [client ::1:62205] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\phpapps\\phpmyadmin\\libraries\\session.inc.php on line 101, referer: http://localhost:120/mysql/import.php
+[Tue Mar 08 23:51:44.501504 2016] [:error] [pid 13104:tid 1308] [client ::1:62205] PHP Stack trace:, referer: http://localhost:120/mysql/import.php
+[Tue Mar 08 23:51:44.501504 2016] [:error] [pid 13104:tid 1308] [client ::1:62205] PHP   1. {main}() C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\phpapps\\phpmyadmin\\db_import.php:0, referer: http://localhost:120/mysql/import.php
+[Tue Mar 08 23:51:44.501504 2016] [:error] [pid 13104:tid 1308] [client ::1:62205] PHP   2. require_once() C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\phpapps\\phpmyadmin\\db_import.php:9, referer: http://localhost:120/mysql/import.php
+[Tue Mar 08 23:51:44.501504 2016] [:error] [pid 13104:tid 1308] [client ::1:62205] PHP   3. require() C:\\Users\\Pierre Rudelou\\Documents\\GitHub\\ProjetTRansvarsal\\UwAmp\\phpapps\\phpmyadmin\\libraries\\common.inc.php:341, referer: http://localhost:120/mysql/import.php
