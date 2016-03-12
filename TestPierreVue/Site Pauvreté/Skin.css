@@ -3,3 +3,14 @@ color:black;
 background-color:white;
 background-image:url(Ressources/Background.png);
 }
+
+h1 {
+	font-family: 'TitreSite', Georgia, serif;
+	font-size: 60px;
+}
+
+
+@font-face { 
+  font-family: 'TitreSite'; 
+  src: url('Ressources/Polices/PaleBlueEyes.ttf'); 
+}
