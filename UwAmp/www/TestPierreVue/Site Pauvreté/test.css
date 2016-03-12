@@ -1,0 +1,12 @@
+body {
+  padding-top: 10px;
+}
+
+
+header { /* Modification de la balise native header */
+	background-image: url(http://pulsmail.com/~wallpaper/data/media/28/fond_d_ecran_espace_18.jpg);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-attachment:fixed;
+	background-size: cover;
+}
