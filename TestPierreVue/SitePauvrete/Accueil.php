@@ -18,7 +18,6 @@
 	
 	<!-- Fichier Javascript de la partie Statistique -->
 	<script src="js/Statistique.js"></script>
-	
  </head>
    
   
@@ -29,8 +28,8 @@
   
 	
 <div class="container">
-
-
+	
+	
 	<!-- Entête du site --> 
 	<div class="row">
 	

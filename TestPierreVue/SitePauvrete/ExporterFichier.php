@@ -37,22 +37,38 @@ $page3 = $workbook->createSheet();
 $page3->setTitle('Indicateur 3');
 
  
+//===========================================================CONTENU DE LA FEUILLE N°1 ===================================================================
+$page1->setCellValueByColumnAndRow(1, 2, "Country Code");
+$page1->setCellValueByColumnAndRow(0, 2, "Country");
+$k = 2;
 
- 
+for ($annee=1974; $annee<2015; $annee++){
+		$page1->setCellValueByColumnAndRow($k, 2, $annee);
+		$k++;
+	}
  
  // Récupérer les données sur la BDD et les stocker dans le fichier
 $reponse = $bdd->query('SELECT * FROM table_1');
 
-$i = 0;
-
+$i = 2;
 while ($row = $reponse->fetch()) {
+	
 	
 	// Remplissage de la cellule
 	for ($j=2; $j<45; $j++){
-		$page1->setCellValueByColumnAndRow($j, $i, $row[$j]);
+		
+		$page1->setCellValueByColumnAndRow($j-2, $i+1, $row[$j]);
 	}		
 	$i = $i + 1;
 }
+//========================================================================================================================================================
+
+
+
+
+//===========================================================CONTENU DE LA FEUILLE N°2 ===================================================================
+
+//===========================================================CONTENU DE LA FEUILLE N°2 ===================================================================
  
 
 // Création du fichier Excell2007 compaptible avec 2003
