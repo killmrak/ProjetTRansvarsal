@@ -15,7 +15,7 @@ catch (Exception $e)
 }
 
 
-// Récupérer les données sur la BDD
+// Récupérer les données sur la BDD et les stocker dans le fichier
 $reponse = $bdd->query('SELECT country FROM table_1');
 
 

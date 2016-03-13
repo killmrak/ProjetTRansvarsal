@@ -22,35 +22,9 @@
  </head>
    
   
-  
-  
 
 <!-- BODY -->  
  <body onLoad="afficherGraphe()">
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
 	
