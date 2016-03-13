@@ -7,6 +7,15 @@ include 'Ressources/PHPExcel/Classes/PHPExcel//Writer/Excel2007.php';
 // Instanciation objet  objet PHPExcel
 $workbook = new PHPExcel;
 
+  // Connexion a la BDD 
+ try
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
+}
+catch (Exception $e)
+{
+       die('Erreur : ' . $e->getMessage());
+}
 
 
 // Nous activons la feuille sur laquelle nous allons travailler (la feuille par défaut), grâce à  la méthode ->getActiveSheet(). 
@@ -28,26 +37,20 @@ $page3 = $workbook->createSheet();
 $page3->setTitle('Indicateur 3');
 
  
-  // Connexion a la BDD 
- try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
-}
-catch (Exception $e)
-{
-       die('Erreur : ' . $e->getMessage());
-}
+
  
  
  // Récupérer les données sur la BDD et les stocker dans le fichier
 $reponse = $bdd->query('SELECT * FROM table_1');
 
-$i = 1;
+$i = 0;
 
 while ($row = $reponse->fetch()) {
 	
 	// Remplissage de la cellule
-	$page1->setCellValueByColumnAndRow(0, $i, $row['Country']);
+	for ($j=2; $j<45; $j++){
+		$page1->setCellValueByColumnAndRow($j, $i, $row[$j]);
+	}		
 	$i = $i + 1;
 }
  
@@ -62,7 +65,7 @@ $records = './Ressources/Statistiques/La_Pauvrete_Dans_Le_Monde.xlsx';
 //Enregistrement
 $writer->save($records);
 
-
+// Téléchargement du fichier via le navigateur
 $fileName="Ressources/Statistiques/La_Pauvrete_Dans_Le_Monde.xlsx";
 header('Content-disposition: attachment; filename='.$fileName); 
 header('Content-Type: application/force-download'); 
