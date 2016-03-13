@@ -28,6 +28,31 @@
 <!-- BODY -->  
  <body onLoad="afficherGraphe()">
   
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 	
 <div class="container">
 
@@ -92,9 +117,7 @@
 						
 					</button>
 					
-				
-				
-				
+			
 				
 					<!-- Bouton Tableau -->
 					<button type="button" class="btn btn-primary" onclick="afficherTableau()">
@@ -103,7 +126,7 @@
 				
 				
 					<!-- Bouton Exporter -->
-					<button type="button" class="btn btn-warning">
+					<button type="button" class="btn btn-warning" onclick="document.location.href = 'ExporterFichier.php'">
 						<span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>
 					</button>
 				
@@ -121,7 +144,7 @@
 					</div><br>
 					
 					
-					<!-- Possitionnement de l'affichage des différents boutons  -->
+					<!-- Possitionnement de l'affichage du graphe/Tableau  -->
 					<div id="affichagestatistique"></div>
 						
 				</div>
