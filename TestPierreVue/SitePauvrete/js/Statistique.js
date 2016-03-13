@@ -5,6 +5,8 @@ Fichier Javascript incluant toutes les fonctions du bloc statistique
 
 
 // Affiche le graphe lors du clic du bouton graphe
+<script type="text/javascript">
+
 function afficherGraphe() {
 	
 	var chartData = [{
@@ -70,13 +72,13 @@ function afficherGraphe() {
 		graph.type = "column";
 		chart.addGraph(graph);
 		chart.write('statistiques');
-
-
 }
 
+</script>
 
 // Affiche le tableau lors du clic du bouton tableau
 function afficherTableau(){
-	document.getElementById("statistiques").innerHTML="<img src='Ressources/Logo.png'/>";
+	//document.location.href = 'ExporterFichier.php'
+	//document.getElementById("statistiques").innerHTML=" ";
 }
 

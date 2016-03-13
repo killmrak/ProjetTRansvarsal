@@ -11,13 +11,14 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-
-	
+<?php
+	include 'Statistique.php';
+?>
 	<!-- Fichier CSS de la page -->
 	<link href="Skin.css" rel="stylesheet">
 	
 	<!-- Fichier Javascript de la partie Statistique -->
-	<script src="js/Statistique.js"></script>
+	
 	<script src="js/Amcharts/amcharts/amcharts.js" type="text/javascript"></script>
 	<script src="js/Amcharts/amcharts/serial.js" type="text/javascript"></script>
 	
@@ -26,7 +27,7 @@
   
 
 <!-- BODY -->  
- <body onLoad="afficherGraphe()";"document.location.href = 'ExporterFichier.php'";"document.location.href = 'GenererPays.php'">
+ <body onLoad=" 'document.location.href =Statistique.php'";";"document.location.href = 'ExporterFichier.php'";"document.location.href = 'GenererPays.php'">
   
   
 	
@@ -88,7 +89,7 @@
 					
 							
 					<!-- Bouton Graphe -->
-					<button type="button" class="btn btn-success" onclick="afficherGraphe()" >
+					<button type="button" class="btn btn-success" onclick="document.location.href ='Statistique.php'"" >
 						<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
 						
 					</button>
