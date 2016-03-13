@@ -18,6 +18,9 @@
 	
 	<!-- Fichier Javascript de la partie Statistique -->
 	<script src="js/Statistique.js"></script>
+	<script src="js/Amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+	<script src="js/Amcharts/amcharts/serial.js" type="text/javascript"></script>
+	
  </head>
    
   
@@ -85,7 +88,7 @@
 					
 							
 					<!-- Bouton Graphe -->
-					<button type="button" class="btn btn-success" onclick="document.location.href = 'AfficherGraphe.php'" >
+					<button type="button" class="btn btn-success" onclick="afficherGraphe()" >
 						<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
 						
 					</button>
@@ -93,7 +96,7 @@
 			
 				
 					<!-- Bouton Tableau -->
-					<button type="button" class="btn btn-primary" onclick="document.location.href = 'AfficherTableau.php'">
+					<button type="button" class="btn btn-primary" onclick="afficherTableau()">
 						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 					</button>
 				
@@ -118,10 +121,10 @@
 					
 					
 					<!-- Possitionnement de l'affichage du graphe/Tableau  -->
-					<div id="affichagestatistique"></div>
+					<div id="statistiques" style="width: 500px; height: 200px;">
 						
 				</div>
-				
+				</div>
 			</div>
 		</div>
 		
