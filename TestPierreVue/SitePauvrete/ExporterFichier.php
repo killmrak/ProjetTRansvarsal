@@ -1,11 +1,34 @@
  <?php
-$fileName  = fopen('Ressources/Statistiques/Ratio_de_la_population_pauvre_en_fonction_du_seuil_de_pauvrete_national_rural.txt',"w+");
+ 
+// Modification du fichier local
+$fileName  = fopen('Ressources/Statistiques/Ratio_de_la_population_pauvre_en_fonction_du_seuil_de_pauvrete_national_urbain.txt',"w");
 ftruncate($fileName ,0);
-fputs($fileName ,"J'aime les coooooooooooooooooooooooooooooookies et les bonbons!"); // on écrit le nom et email dans le fichier
+ 
+ // Connexion a la BDD 
+ try
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
+}
+catch (Exception $e)
+{
+       die('Erreur : ' . $e->getMessage());
+}
+
+
+// Récupérer les données sur la BDD
+$reponse = $bdd->query('SELECT country FROM table_1');
+
+
+while ($row = $reponse->fetch())
+{
+	echo $row['country'];
+?> 
+ <?php
+}
  
  
-// Téléchargement d'un fichier txt 
-$fileName="Ressources/Statistiques/Ratio_de_la_population_pauvre_en_fonction_du_seuil_de_pauvrete_national_rural.txt";
+// Téléchargement du fichier txt 
+$fileName="Ressources/Statistiques/Ratio_de_la_population_pauvre_en_fonction_du_seuil_de_pauvrete_national_urbain.txt";
 header('Content-disposition: attachment; filename='.$fileName); 
 header('Content-Type: application/force-download'); 
 header("Content-Transfer-Encoding: binary"); 
