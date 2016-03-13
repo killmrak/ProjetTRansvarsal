@@ -1,13 +1,13 @@
  <?php
  
-	/* Here there will be some code where you create $objPHPExcel */
-	 
-	// redirect output to client browser
-	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-	header('Content-Disposition: attachment;filename="myfile.xlsx"');
-	header('Cache-Control: max-age=0');
-	 
-	$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-	$objWriter->save('php://output');
-	}
+// Téléchargement d'un fichier txt 
+$fileName = "coucou.txt";
+header('Content-disposition: attachment; filename='.$fileName); 
+header('Content-Type: application/force-download'); 
+header("Content-Transfer-Encoding: binary"); 
+header("Content-Length: ".filesize($fileName));
+header("Pragma: no-cache");
+header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
+header("Expires: 0");
+readfile($fileName);
 ?> 
