@@ -18,11 +18,12 @@ h1 {
 .btn-group2{
 	
 	line-height:1em;
-	position : fixed;
+	
 	width:320px;
 	height:150px;
 	overflow:auto;
 	padding:5px;
-	box-shadow: 1px 10px #0000000;
+	box-shadow: 5px 20px #0000000;
+	
 }
 
