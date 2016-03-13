@@ -138,6 +138,13 @@ if (typeof jQuery === 'undefined') {
 
   // ALERT PLUGIN DEFINITION
   // =======================
+  //////////////////////////////////////////////////////////////////////////
+  
+function afficherimage() {
+					document.getElementById("chart").innerHTML="<img src='Ressources/graphe.png'/>";
+					}
+ 
+			//////////////////////////////////////////////////////////////////////////////////////////
 
   function Plugin(option) {
     return this.each(function () {

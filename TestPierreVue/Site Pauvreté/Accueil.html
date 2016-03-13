@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
+<!-- Afficher image selon le clique -->
+		<script type="text/javascript">
+					function afficherGraphe() {
+					document.getElementById("chart").innerHTML="<img src='Ressources/graphe.png'/>";
+					
+					}
+					
+					function afficherTableau(){
+					document.getElementById("tab").innerHTML="<img src='Ressources/Logo.png'/>";
+					}
+				
+					
+		</script>
+		
+		
+		
 
 
 <!-- HEAD -->
@@ -10,7 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Pauvreté dans le monde</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -90,15 +104,17 @@
 					
 							
 					<!-- Bouton Graphe -->
-					<button type="button" class="btn btn-success">
+					<button type="button" class="btn btn-success" onclick="afficherGraphe()" >
 						<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+						
 					</button>
+					
 				
 				
 				
 				
 					<!-- Bouton Tableau -->
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary" onclick="afficherTableau()">
 						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 					</button>
 				
@@ -119,8 +135,16 @@
 							<li><a href="#">Indicateur n°1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
 							<li><a href="#">Indicateur n°2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
 							<li><a href="#">Indicateur n°3 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
-					</div>				
+					</div><br><br>
+					<div id="chart">
+						<div id="tab">
+						</div>
+					</div>	
+					
+					
+					
 				</div>
+				
 			</div>
 		</div>
 		
@@ -203,7 +227,7 @@
 								<li><a href="#">Muritanie</a></li>
 								<li><a href="#">Muritanie</a></li>
 						</div>	
-					</center>
+					</center><br><br><br><br><br><br><br>
 					
 				</div>
 			</div>	
