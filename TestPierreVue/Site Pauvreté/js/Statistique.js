@@ -4,15 +4,15 @@ Fichier Javascript incluant toutes les fonctions du bloc statistique
 
 
 
-// Affiche le graphe en fonction du bouton pressé
+// Affiche le graphe lors du clic du bouton graphe
 function afficherGraphe() {
-	document.getElementById("chart").innerHTML="<img src='Ressources/graphe.png'/>";
+	document.getElementById("affichagestatistique").innerHTML="<img src='Ressources/graphe.png'/>";
 
 }
 
 
-// Affiche le tableau en fonction du bouton pressé
+// Affiche le tableau lors du clic du bouton tableau
 function afficherTableau(){
-	document.getElementById("tab").innerHTML="<img src='Ressources/Logo.png'/>";
+	document.getElementById("affichagestatistique").innerHTML="<img src='Ressources/Logo.png'/>";
 }
 
