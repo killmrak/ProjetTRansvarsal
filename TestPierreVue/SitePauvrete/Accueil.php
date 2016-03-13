@@ -182,53 +182,29 @@
 					</button>
 					
 					<br>
-					<br>
 					
-					<!-- Liste déroulante choix pays -->
-					<center>
-						<div class="btn-group">
-							<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Choix des pays &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu"> <div style="width:150px;height:150px;line-height:2em;overflow:auto;padding:5px;"/>
-								<li><a href="#">Italie</a></li>
-								<li><a href="#">Canada</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
-								<li><a href="#">Muritanie</a></li>
+					
+					
+					<!-- Menu pour le choix pays -->
+					
+						<div class="btn-group2">
+							
+							 
+							 
+								<ul class="nav nav-pills nav-stacked">
+								  <li class="active"><a href="#">Choix des pays</a></li>
+								  <li><a href="#">France</a></li>
+								  <li><a href="#">Italie</a></li>
+								  <li><a href="#">Algérie</a></li>
+								  <li><a href="#">Amerique</a></li>
+								  <li><a href="#">Amerique</a></li>
+								  <li><a href="#">Amerique</a></li>
+								  <li><a href="#">Amerique</a></li>
+								  <li><a href="#">Amerique</a></li>
+								  <li><a href="#">Amerique</a></li>
+								</ul>
 						</div>	
+							
 					</center><br><br><br><br><br><br><br>
 					
 				</div>

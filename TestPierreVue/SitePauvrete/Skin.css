@@ -15,4 +15,12 @@ h1 {
   src: url('Ressources/Polices/PaleBlueEyes.ttf'); 
 }
 
-btn-group { width:150px;height:150px;line-height:2em;overflow:auto;padding:5px;" }
+.btn-group2{
+	line-height:1em;
+	position : fixed;
+	width:320px;
+	height:150px;
+	overflow:auto;
+	padding:5px;
+	box-shadow: 1px 10px #0000000;
+}
