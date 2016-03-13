@@ -23,7 +23,7 @@
   
 
 <!-- BODY -->  
- <body onLoad="afficherGraphe()">
+ <body onLoad="afficherGraphe()";"document.location.href = 'ExporterFichier.php'";"document.location.href = 'GenererPays.php'">
   
   
 	
@@ -85,7 +85,7 @@
 					
 							
 					<!-- Bouton Graphe -->
-					<button type="button" class="btn btn-success" onclick="afficherGraphe()" >
+					<button type="button" class="btn btn-success" onclick="document.location.href = 'AfficherGraphe.php'" >
 						<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
 						
 					</button>
@@ -93,7 +93,7 @@
 			
 				
 					<!-- Bouton Tableau -->
-					<button type="button" class="btn btn-primary" onclick="afficherTableau()">
+					<button type="button" class="btn btn-primary" onclick="document.location.href = 'AfficherTableau.php'">
 						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 					</button>
 				
@@ -160,25 +160,39 @@
 					
 					<!-- Menu pour le choix pays -->
 					
-						<div class="btn-group2">
+						
 							
+							 <div class="btn-group2">
 							 
-							 
-								<ul class="nav nav-pills nav-stacked">
-								  <li class="active"><a href="#">Choix des pays</a></li>
-								  <li><a href="#">France</a></li>
-								  <li><a href="#">Italie</a></li>
-								  <li><a href="#">Algérie</a></li>
-								  <li><a href="#">Amerique</a></li>
-								  <li><a href="#">Amerique</a></li>
-								  <li><a href="#">Amerique</a></li>
-								  <li><a href="#">Amerique</a></li>
-								  <li><a href="#">Amerique</a></li>
-								  <li><a href="#">Amerique</a></li>
-								</ul>
-						</div>	
+								<ul class="nav nav-pills nav-stacked" >
+									  <li class="active">
+									  <a href="#" >Choix des pays</a></li>
+									  <?php
+									  try
+										{
+											// On se connecte à MySQL
+											$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
+										}
+										catch(Exception $e)
+										{
+											// En cas d'erreur, on affiche un message et on arrête tout
+												die('Erreur : '.$e->getMessage());
+										}
+									  $reponse = $bdd->query('SELECT * FROM table_1');
+									 while ($donnees = $reponse->fetch())
+										{
+										?>
+										
+									  <li>
+									  <option value=" <?php echo $donnees['Country']; ?>"> <?php echo $donnees['Country']; ?></option>
+									   
+									  </li>
+									  <?php
+									  }
+								  ?>
+								</ul>	
 							
-					</center><br><br><br><br><br><br><br>
+					<br><br><br><br><br><br><br>
 					
 				</div>
 			</div>	
