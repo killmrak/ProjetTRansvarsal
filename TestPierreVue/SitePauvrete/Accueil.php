@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- HEAD -->
- <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pauvreté dans le monde</title>
+	<!-- HEAD -->
+	 <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Pauvreté dans le monde</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 
-	
-	<!-- Fichier CSS de la page -->
-	<link href="Skin.css" rel="stylesheet">
-	
-	<!-- Fichier Javascript de la partie Statistique -->
-	<script src="js/Statistique.js"></script>
-	<script src="js/Selection.js"></script>
-	<script src="js/Amcharts/amcharts/amcharts.js" type="text/javascript"></script>
-	<script src="js/Amcharts/amcharts/serial.js" type="text/javascript"></script>
-	
+		
+		<!-- Fichier CSS de la page -->
+		<link href="Skin.css" rel="stylesheet">
+		
+		<!-- Fichier Javascript de la partie Statistique -->
+		<script src="js/Statistique.js"></script>
+		<script src="js/Selection.js"></script>
+		<script src="js/Amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+		<script src="js/Amcharts/amcharts/serial.js" type="text/javascript"></script>
+		
 
-	
- </head>
+		
+	</head>
    
   
 
@@ -32,6 +32,10 @@
  <body onLoad="afficherGraphe()";"document.location.href = 'ExporterFichier.php'";"document.location.href = 'GenererPays.php'">
   
   
+		<!-- Generation du JSON -->
+ 		<?php
+			require("GenererJson.php");
+		?> 
 	
 <div class="container">
 	
@@ -155,7 +159,7 @@
 					
 						
 							
-							 <div id="monDiv" class="btn-group2" >
+				<div id="monDiv" class="btn-group2" >
 							 
 
 								<ul class="nav nav-pills nav-stacked" >
@@ -215,6 +219,6 @@
     <script src="js/bootstrap.min.js"></script>
 </body>
   
-  
+
   
 </html>
