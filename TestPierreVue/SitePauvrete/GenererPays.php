@@ -20,6 +20,7 @@ while ($donnees = $reponse->fetch())
 {
  
 echo $donnees['Country']. '<br />' ;
+
      
  
 }

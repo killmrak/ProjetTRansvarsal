@@ -18,8 +18,11 @@
 	
 	<!-- Fichier Javascript de la partie Statistique -->
 	<script src="js/Statistique.js"></script>
+	<script src="js/Selection.js"></script>
 	<script src="js/Amcharts/amcharts/amcharts.js" type="text/javascript"></script>
 	<script src="js/Amcharts/amcharts/serial.js" type="text/javascript"></script>
+	
+
 	
  </head>
    
@@ -152,11 +155,13 @@
 					
 						
 							
-							 <div class="btn-group2">
+							 <div id="monDiv" class="btn-group2" >
 							 
+
 								<ul class="nav nav-pills nav-stacked" >
-									  <li class="active">
-									  <a href="#" >Choix des pays</a></li>
+								<li select id="select" onchange="colourFunction()">
+										
+									  <a href="#" class="color">Choix des pays</a></li>
 									  <?php
 									  try
 										{
@@ -173,13 +178,15 @@
 										{
 										?>
 										
-									  <li>
-									  <option value=" <?php echo $donnees['Country']; ?>"> <?php echo $donnees['Country']; ?></option>
-									   
+									  <li><a href="#" class="color" >
+									  <option value=" <?php echo $donnees['Country']; ?>" class="color"> <?php echo $donnees['Country'];  ?></option>
+									   </a>
+									  
 									  </li>
 									  <?php
 									  }
 								  ?>
+								   
 								</ul>	
 							
 					<br><br><br><br><br><br><br>
