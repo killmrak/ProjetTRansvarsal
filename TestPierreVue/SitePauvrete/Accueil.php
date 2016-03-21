@@ -50,19 +50,6 @@
 			</center>
 		</div>
 			
-		<!-- Drapeaux Français et Britanique --> 	
-		<div class="col-xs-2">	
-			<br>
-			<br> <br> <br> <br>
-				<!-- Drapeaux Français-->
-				<img src="Ressources/FranceFlag.jpg" alt="Passer le site en Français"/> 
-				
-				<!-- Espace -->
-				&nbsp;
-				
-				<!-- Drapeaux Britanique-->
-				<img src="Ressources/BritishFlag.jpg" alt="Passer le site en Anglais"/> 
-		</div>
 		
 	</div>
 	
