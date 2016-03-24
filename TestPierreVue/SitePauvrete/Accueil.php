@@ -40,7 +40,7 @@
   
 		<!-- Generation du JSON -->
  		<?php
-			require("GenererJson.php");
+			//require("GenererJson.php");
 		?> 
 	
 <div class="container">
@@ -108,16 +108,45 @@
 				
 
 					<!-- Menu dйroulant de choix d'indicateur -->
-					<div class="btn-group">
-						<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Choix d'un indicateur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu"> 
-							<li><a href="#">Indicateur n°1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
-							<li><a href="#">Indicateur n°2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
-							<li><a href="#">Indicateur n°3 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
-					</div><br>
+					<select id = "List">
+					<?php
+					// Connexion a la BDD 
+					try
+				   {
+					$bdd = new PDO('mysql:host=localhost;dbname=pauvrete;charset=utf8', 'root', 'root');
+				   }
+				   catch (Exception $e)
+				   {
+					   die('Erreur : ' . $e->getMessage());
+				   }
+				   
+				   $reponse = $bdd->query("SHOW TABLES");
+				   
+										
+					while ($row = $reponse->fetch()) {
+						
+						$reponse2 = $bdd->query("Select DISTINCT indicateur_Name from ".$row['Tables_in_pauvrete'].";");
+						
+						$nom = $reponse2->fetch();
+							$snom = $nom['indicateur_Name'];
+						
+						 ?> <option><?php echo $snom ?></option> <?php 
+							 
+					}
+					
+							
+					
+			  ?>
+			  
+			</select>
+
+
+			<script type = "text/javascript">
+			var select = document.getElementById("List");
+			select.onchange = function(){
+			 alert(this.options[this.selectedIndex].innerHTML);
+			}
+			</script><br>
 					
 					
 					<!-- Possitionnement de l'affichage du graphe/Tableau  -->
@@ -176,20 +205,20 @@
 									  try
 										{
 											// On se connecte а MySQL
-											$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
+											$bdd = new PDO('mysql:host=localhost;dbname=pauvrete;charset=utf8', 'root', 'root');
 										}
 										catch(Exception $e)
 										{
 											// En cas d'erreur, on affiche un message et on arrкte tout
 												die('Erreur : '.$e->getMessage());
 										}
-									  $reponse = $bdd->query('SELECT * FROM table_1');
+									  $reponse = $bdd->query('SELECT DISTINCT pays FROM urbaine');
 									 while ($donnees = $reponse->fetch())
 										{
 										?>
 										
 									  <li><a href="#" class="color" >
-									  <option value=" <?php echo $donnees['Country']; ?>" class="color"> <?php echo $donnees['Country'];  ?></option>
+									  <option value=" <?php echo $donnees['pays']; ?>" class="color"> <?php echo $donnees['pays'];  ?></option>
 									   </a>
 									  
 									  </li>
@@ -229,7 +258,7 @@
 		<div class="col-xs-10">
 			<div class="panel panel-default">
 					<div class="panel-body">
-						<iframe src="Map/worldmap.php" width="915px" height="575px" >*
+						<iframe src="Map/worldmap.php" width="745px" height="575px" >*
 							<br> 
 						</iframe >
 					</div>
