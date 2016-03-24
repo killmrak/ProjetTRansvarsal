@@ -2,7 +2,7 @@
 try
 {
     // On se connecte à MySQL
-    $bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=pauvrete;charset=utf8', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -13,13 +13,13 @@ catch(Exception $e)
 // Si tout va bien, on peut continuer
  
 // On récupère tout le contenu de la table jeux_video
-$reponse = $bdd->query('SELECT * FROM table_1');
+$reponse = $bdd->query('SELECT * FROM urbaine');
  
 // On affiche chaque entrée une à une
 while ($donnees = $reponse->fetch())
 {
  
-echo $donnees['Country']. '<br />' ;
+echo $donnees['pays']. '<br />' ;
 
      
  
