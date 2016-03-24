@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Pauvreté dans le monde</title>
+		<title>Pauvretй dans le monde</title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +22,12 @@
 		<script src="js/Amcharts/amcharts/amcharts.js" type="text/javascript"></script>
 		<script src="js/Amcharts/amcharts/serial.js" type="text/javascript"></script>
 		
+		<!-- Fichiers pour la carte interactive -->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+		<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
 
 		
 	</head>
@@ -40,7 +46,7 @@
 <div class="container">
 	
 	
-	<!-- Entête du site --> 
+	<!-- Entкte du site --> 
 	<div class="row">
 	
 		<!-- Logo du Site --> 
@@ -52,7 +58,7 @@
 		<div class="col-xs-8">	
 			<center>
 				<h1>
-					<br> La Pauvreté dans le monde
+					<br> La Pauvretй dans le monde
 				</h1>
 			</center>
 		</div>
@@ -73,10 +79,10 @@
 				
 		</div>
 		
-		<!-- Fenêtre d'affichage des statistiques --> 
+		<!-- Fenкtre d'affichage des statistiques --> 
 		<div class="col-xs-6">	
 		
-			<!-- Fenête -->
+			<!-- Fenкte -->
 			<div class="panel panel-default">
 				<div class="panel-body">
 					
@@ -101,7 +107,7 @@
 					</button>
 				
 
-					<!-- Menu déroulant de choix d'indicateur -->
+					<!-- Menu dйroulant de choix d'indicateur -->
 					<div class="btn-group">
 						<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Choix d'un indicateur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -123,7 +129,7 @@
 		</div>
 		
 				
-		<!-- Fenêtre de choix de pays --> 
+		<!-- Fenкtre de choix de pays --> 
 		<div class="col-xs-4">	
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -169,12 +175,12 @@
 									  <?php
 									  try
 										{
-											// On se connecte à MySQL
+											// On se connecte а MySQL
 											$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
 										}
 										catch(Exception $e)
 										{
-											// En cas d'erreur, on affiche un message et on arrête tout
+											// En cas d'erreur, on affiche un message et on arrкte tout
 												die('Erreur : '.$e->getMessage());
 										}
 									  $reponse = $bdd->query('SELECT * FROM table_1');
@@ -210,6 +216,30 @@
 	</div>
 	
 		
+</div>
+
+<!-- Emplacement carte interactive -->
+<div class="row">
+	
+			<!-- Espace Vide --> 
+		<div class="col-xs-1">					
+		</div>
+		
+		<!-- Carte Interactive --> 
+		<div class="col-xs-10">
+			<div class="panel panel-default">
+					<div class="panel-body">
+						<iframe src="Map/worldmap.php" width="915px" height="575px" >*
+							<br> 
+						</iframe >
+					</div>
+			</div>
+		</div>
+		
+		<!-- Espace Vide --> 
+		<div class="col-xs-1">					
+		</div>
+	
 </div>
 		
 	
