@@ -176,7 +176,7 @@
 									  try
 										{
 											// On se connecte а MySQL
-											$bdd = new PDO('mysql:host=localhost;dbname=pauvrete;charset=utf8', 'root', 'root');
+											$bdd = new PDO('mysql:host=localhost;dbname=lapauvretedanslemonde;charset=utf8', 'root', 'root');
 										}
 										catch(Exception $e)
 										{
