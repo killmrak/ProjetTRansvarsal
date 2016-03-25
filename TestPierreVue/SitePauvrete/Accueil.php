@@ -218,7 +218,7 @@
 										?>
 										
 									  <li><a href="#" class="color" >
-									  <option value=" <?php echo $donnees['pays']; ?>" class="color"> <?php echo $donnees['pays'];  ?></option>
+									  <option value=" <?php echo $donnees['pays']; ?>"> <?php echo $donnees['pays'];  ?></option>
 									   </a>
 									  
 									  </li>
