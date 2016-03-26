@@ -2,6 +2,12 @@
 <html lang="en">
 	<!-- HEAD -->
 	 <head>
+		
+		<?php 
+			session_start();
+		?>
+	 
+	 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +17,9 @@
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
-
+		<?php
+			require_once("Map/functions.php");
+		?>
 		
 		<!-- Fichier CSS de la page -->
 		<link href="Skin.css" rel="stylesheet">
@@ -37,7 +45,7 @@
 <!-- BODY -->  
  <body onLoad="afficherGraphe()";"document.location.href = 'ExporterFichier.php'";"document.location.href = 'GenererPays.php'">
   
-  
+		
 		<!-- Generation du JSON -->
  		<?php
 			//require("GenererJson.php");
@@ -107,7 +115,7 @@
 					</button>
 				
 
-					<!-- Menu dйroulant de choix d'indicateur -->
+					<!-- Menu déroulant de choix d'indicateur -->
 					<select id = "List">
 					<?php
 					// Connexion a la BDD 
@@ -122,6 +130,12 @@
 				   
 				   $reponse = $bdd->query("SHOW TABLES");
 				   
+				   
+				   function transmettre($parametre){
+					   return $parametre;
+				   }
+										
+										
 										
 					while ($row = $reponse->fetch()) {
 						
@@ -144,6 +158,12 @@
 			<script type = "text/javascript">
 			var select = document.getElementById("List");
 			select.onchange = function(){
+			 <?php
+				$counter="<script>document.write(this.options[this.selectedIndex].innerHTML);</script>";
+				$tab = array();
+				//$tab = indicateur(this.options[this.selectedIndex].innerHTML);
+				$_SESSION['tab'] = $counter; 
+			 ?>
 			 alert(this.options[this.selectedIndex].innerHTML);
 			}
 			</script><br>
@@ -276,6 +296,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	
+	
+	
+	
+	
 </body>
   
 

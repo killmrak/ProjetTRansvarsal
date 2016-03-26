@@ -10,9 +10,9 @@ $pdo = new PDO($dsn, 'root', 'root', $opt);
 return $pdo;
 }
 
-function indicateur(){
+function indicateur($parametre){
 $pdo=connectDB();	
-$stmt = $pdo->query('SELECT pays,pays_Code,temps,Value FROM urbaine where temps=2010 and Value >1');
+$stmt = $pdo->query("SELECT pays,pays_Code,temps,Value FROM ". $parametre ." where temps=2010 and Value >1");
 $arrphp=array();
 while ($row = $stmt->fetch())
 {

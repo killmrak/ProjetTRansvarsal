@@ -1,10 +1,15 @@
 <!DOCTYPE HTML>
-<?php require_once("functions.php") ?>
+<?php require_once("functions.php"); require_once("../Accueil.php"); ?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>World Map</title>
-
+	
+		<?php 
+			session_start();
+		?>
+		
+		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<style type="text/css">
 * {
@@ -44,8 +49,9 @@
 
 		<script type="text/javascript">
 $(function () {
-<?php $arrphp=array();
-$arrphp=indicateur();
+<?php 
+	$arrphp=array();
+	$arrphp=$_SESSION['tab'];
  ?>;
 var countries = <?php echo json_encode( $arrphp ) ?>;
 var data = [];  				
@@ -112,8 +118,19 @@ $.each(countries, function (i, val) {
             }]
         }).highcharts();
 
-     
-        mapChart.get('us').select();
+		
+			var select = document.getElementById("List");
+			select.onchange = function(){
+			 <?php
+				$counter="<script>document.write(this.options[this.selectedIndex].innerHTML);</script>";
+				$tab = array();
+				//$tab = indicateur(this.options[this.selectedIndex].innerHTML);
+				$_SESSION['tab'] = $counter; 
+			 ?>
+			 alert(this.options[this.selectedIndex].innerHTML);
+			}
+			
+		mapChart.redraw;
     
 });
 		</script>
