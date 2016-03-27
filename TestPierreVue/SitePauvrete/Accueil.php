@@ -2,12 +2,7 @@
 <html lang="en">
 	<!-- HEAD -->
 	 <head>
-		
-		<?php 
-			session_start();
-		?>
-	 
-	 
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +35,8 @@
 		
 	</head>
    
-  
+
+
 
 <!-- BODY -->  
  <body onLoad="afficherGraphe()";"document.location.href = 'ExporterFichier.php'";"document.location.href = 'GenererPays.php'">
@@ -66,7 +62,7 @@
 		<div class="col-xs-8">	
 			<center>
 				<h1>
-					<br> La Pauvretй dans le monde
+					<br> La Pauvrete dans le monde
 				</h1>
 			</center>
 		</div>
@@ -116,57 +112,8 @@
 				
 
 					<!-- Menu déroulant de choix d'indicateur -->
-					<select id = "List">
-					<?php
-					// Connexion a la BDD 
-					try
-				   {
-					$bdd = new PDO('mysql:host=localhost;dbname=pauvrete;charset=utf8', 'root', 'root');
-				   }
-				   catch (Exception $e)
-				   {
-					   die('Erreur : ' . $e->getMessage());
-				   }
-				   
-				   $reponse = $bdd->query("SHOW TABLES");
-				   
-				   
-				   function transmettre($parametre){
-					   return $parametre;
-				   }
-										
-										
-										
-					while ($row = $reponse->fetch()) {
-						
-						$reponse2 = $bdd->query("Select DISTINCT indicateur_Name from ".$row['Tables_in_pauvrete'].";");
-						
-						$nom = $reponse2->fetch();
-							$snom = $nom['indicateur_Name'];
-						
-						 ?> <option><?php echo $snom ?></option> <?php 
-							 
-					}
-					
-							
-					
-			  ?>
-			  
-			</select>
-
-
-			<script type = "text/javascript">
-			var select = document.getElementById("List");
-			select.onchange = function(){
-			 <?php
-				$counter="<script>document.write(this.options[this.selectedIndex].innerHTML);</script>";
-				$tab = array();
-				//$tab = indicateur(this.options[this.selectedIndex].innerHTML);
-				$_SESSION['tab'] = $counter; 
-			 ?>
-			 alert(this.options[this.selectedIndex].innerHTML);
-			}
-			</script><br>
+	                
+ 	
 					
 					
 					<!-- Possitionnement de l'affichage du graphe/Tableau  -->
@@ -246,6 +193,7 @@
 									  }
 								  ?>
 								   
+
 								</ul>	
 							
 					<br><br><br><br><br><br><br>
@@ -278,7 +226,7 @@
 		<div class="col-xs-10">
 			<div class="panel panel-default">
 					<div class="panel-body">
-						<iframe src="Map/worldmap.php" width="745px" height="575px" >*
+						<iframe src="Map/worldmap.php" width="830px" height="575px" >
 							<br> 
 						</iframe >
 					</div>

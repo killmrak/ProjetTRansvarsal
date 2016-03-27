@@ -1,57 +1,70 @@
 <!DOCTYPE HTML>
-<?php require_once("functions.php"); require_once("../Accueil.php"); ?>
+<?php 
+session_start();
+require_once("functions.php");
+					
+ ?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>World Map</title>
-	
-		<?php 
-			session_start();
-		?>
-		
-		
+
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<style type="text/css">
-* {
-    font-family: sans-serif;
-}
-#wrapper {
-    height: 500px;
-    width: 1000px;
-    margin: 0 auto;
-    padding: 0;
-}
 #container {
-    float: left;
     height: 500px; 
-    width: 700px; 
-    margin: 0;
-}
-#info {
-    float: left;
-    width: 270px;
-    padding-left: 20px;
-    margin: 100px 0 0 0;
-    border-left: 1px solid silver;
-}
-#info h2 {
-    display: inline;
-    font-size: 13pt;
-}
-#info .f32 .flag {
-    vertical-align: bottom !important;
+    width: 800px; 
+    margin: 0 auto; 
 }
 
-#info h4 {
-    margin: 1em 0 0 0;
+.highcharts-tooltip>span {
+    padding: 10px;
+    white-space: normal !important;
+    width: 200px;
+}
+
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
+
+.f32 .flag {
+    vertical-align: middle !important;
 }
 		</style>
-
+	
+<?php
+if(isset ($_POST['choose'] )){
+$currValue = strip_tags($_POST['choose']);
+}
+else{
+	$currValue="urbaine";
+}
+?>	
+		
+<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post"> 
+	<select name="choose" onchange="this.form.submit()">
+					<?php	
+				$tab=array();
+				$tab=table();					
+					foreach($tab as $value )	{
+						$snom=nameTable($value["Tables_in_pauvrete"]);
+						showOption($value["Tables_in_pauvrete"], $snom, $currValue);
+						
+					}					
+					
+			  ?>
+			</select>
+</form>
+          
 		<script type="text/javascript">
+	
+		
+		
 $(function () {
-<?php 
-	$arrphp=array();
-	$arrphp=$_SESSION['tab'];
+<?php $arrphp=array();
+$arrphp=indicateur($currValue);
  ?>;
 var countries = <?php echo json_encode( $arrphp ) ?>;
 var data = [];  				
@@ -59,100 +72,87 @@ $.each(countries, function (i, val) {
 				
                 data.push({
                     name: countries[i]['pays'],
-                    code3: countries[i] ['pays_Code'],
+                    code: countries[i] ['pays_Code'],
                     value: countries[i] ['Value'],
                     year: countries[i]['temps']
                 });
 			
 })
 // Add lower case codes to the data set for inclusion in the tooltip.pointFormat
-        var mapData = Highcharts.geojson(Highcharts.maps['custom/world']);
-        $.each(mapData, function () {
-            this.id = this.properties['hc-key']; // for Chart.get()
-            this.flag = this.id.replace('UK', 'GB').toLowerCase();
+        $.each(data, function () {
+            this.flag = this.code.replace('UK', 'GB').toLowerCase();
         });
     // Initiate the map chart
-        mapChart = $('#container').highcharts('Map', {
+      $('#container').highcharts('Map', {
 
-            title : {
-                text : 'Indiateur pauvrete'
+            title: {
+                text: 'Pauvrete dans le monde'
             },
 
-            subtitle: {
-                text: 'Source: <a href="http://data.worldbank.org/indicator/SP.POP.TOTL/countries/1W?display=default">The World Bank</a>'
+            legend: {
+                title: {
+                    text: 'pauvrete density per $',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                    }
+                }
             },
 
             mapNavigation: {
-                enabled: true,
+                enabled: false,
                 buttonOptions: {
                     verticalAlign: 'bottom'
                 }
             },
 
-            colorAxis: {
-                type: 'logarithmic',
-                endOnTick: false,
-                startOnTick: false,
-                min: 1,
-				max: 1000
+            tooltip: {
+                backgroundColor: 'none',
+                borderWidth: 0,
+                shadow: false,
+                useHTML: true,
+                padding: 0,
+                pointFormat: '<span class="f32"><span class="flag {point.flag}"></span></span>' +
+                    ' {point.name}: <b>{point.value}</b>/$',
+                positioner: function () {
+                    return { x: 0, y: 250 };
+                }
             },
 
-            tooltip: {
-                footerFormat: '<span style="font-size: 10px">(Click for details)</span>'
+            colorAxis: {
+                min: 1,
+                max: 1000,
+                type: 'logarithmic'
             },
 
             series : [{
                 data : data,
-                mapData: mapData,
-                joinBy: ['iso-a3', 'code3'],
-                name: 'Current population',
-                allowPointSelect: true,
-                cursor: 'pointer',
+                mapData: Highcharts.maps['custom/world'],
+                joinBy: ['iso-a3', 'code'],
+                name: 'Population density',
                 states: {
-                    select: {
-                        color: '#a4edba',
-                        borderColor: 'black',
-                        dashStyle: 'shortdot'
+                    hover: {
+                        color: '#BADA55'
                     }
                 }
             }]
-        }).highcharts();
+        });
 
-		
-			var select = document.getElementById("List");
-			select.onchange = function(){
-			 <?php
-				$counter="<script>document.write(this.options[this.selectedIndex].innerHTML);</script>";
-				$tab = array();
-				//$tab = indicateur(this.options[this.selectedIndex].innerHTML);
-				$_SESSION['tab'] = $counter; 
-			 ?>
-			 alert(this.options[this.selectedIndex].innerHTML);
-			}
-			
-		mapChart.redraw;
+     
+       
     
 });
 		</script>
 	</head>
 	<body>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
 <!-- Flag sprites service provided by Martijn Lafeber, https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
 <link rel="stylesheet" type="text/css" href="https://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
 
 
-<div id="wrapper">
-    <div id="container"></div>
-    <div id="info">
-        <span class="f32"><span id="flag"></span></span>
-        <h2></h2>
-        
-        <div id="country-chart"></div>
-    </div>
-</div>
-
+<div id="container"></div>
 	</body>
 </html>
