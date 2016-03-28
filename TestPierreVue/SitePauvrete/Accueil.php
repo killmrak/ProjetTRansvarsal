@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Pauvretй dans le monde</title>
+		<title>Pauvrete dans le monde</title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -226,7 +226,7 @@
 		<div class="col-xs-10">
 			<div class="panel panel-default">
 					<div class="panel-body">
-						<iframe src="Map/worldmap.php" width="830px" height="575px" >
+						<iframe src="Map/worldmap_ajax.php" width="830px" height="600px" >
 							<br> 
 						</iframe >
 					</div>
