@@ -1,3 +1,16 @@
+.btn btn-success span{
+  
+   visibility:hidden;
+   }
+   
+  . button span:hover  {
+   
+   visibility:visible;
+   text-decoration:hello;
+   }
+
+
+
 body {
 color:black;
 background-color:white;
@@ -26,10 +39,12 @@ h1 {
 	box-shadow: 5px 20px #0000000;
 		
 }
-
 .color:hover {
-    background-color: blue;
+color:red;
+text-decoration:none;
+background-color:silver;
 }
+
 
 iframe{
 	border-right:none;

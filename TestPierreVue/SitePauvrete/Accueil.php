@@ -93,7 +93,9 @@
 							
 					<!-- Bouton Graphe -->
 					<button type="button" class="btn btn-success"  onclick="afficherGraphe()" >
+					
 						<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+					
 						
 					</button>
 					
@@ -167,7 +169,7 @@
 								<ul class="nav nav-pills nav-stacked" >
 								<li select id="select" onchange="colourFunction()">
 										
-									  <a href="#" class="color">Choix des pays</a></li>
+									  <a href="#">Choix des pays</a></li>
 									  <?php
 									  try
 										{
