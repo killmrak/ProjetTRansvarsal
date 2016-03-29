@@ -92,7 +92,7 @@
 					
 							
 					<!-- Bouton Graphe -->
-					<button type="button" class="btn btn-success" onclick="afficherGraphe()" >
+					<button type="button" class="btn btn-success"  onclick="afficherGraphe()" >
 						<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
 						
 					</button>
@@ -226,7 +226,8 @@
 		<div class="col-xs-10">
 			<div class="panel panel-default">
 					<div class="panel-body">
-						<iframe src="Map/worldmap_ajax.php" width="830px" height="600px" >
+					
+						<iframe src="Map/worldmap_ajax.php" width="910px" height="700px" >
 							<br> 
 						</iframe >
 					</div>

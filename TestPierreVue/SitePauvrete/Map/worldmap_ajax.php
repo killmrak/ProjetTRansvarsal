@@ -1,7 +1,7 @@
 <?php
 require_once("functions.php");
 ?>
-
+<link href="MyStyle.css" rel="stylesheet">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post"> 
 	<select id="indice" >

@@ -16,11 +16,11 @@ require_once("functions.php");
 .highcharts-tooltip>span {
     padding: 10px;
     white-space: normal !important;
-    width: 200px;
+    width: 250px;
 }
 
 .loading {
-    margin-top: 10em;
+    margin-top: 100em;
     text-align: center;
     color: gray;
 }
@@ -61,14 +61,18 @@ $.each(countries, function (i, val) {
       $('#container').highcharts('Map', {
 
             title: {
-                text: 'Pauvrete dans le monde'
+                text: 'Pauvrete dans le monde' 
+								
+			
             },
+			
 
             legend: {
                 title: {
                     text: 'pauvrete density per $',
                     style: {
                         color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+						
                     }
                 }
             },
@@ -85,11 +89,11 @@ $.each(countries, function (i, val) {
                 borderWidth: 0,
                 shadow: false,
                 useHTML: true,
-                padding: 0,
+                padding: 20,
                 pointFormat: '<span class="f32"><span class="flag {point.flag}"></span></span>' +
                     ' {point.name}: <b>{point.value}</b>/$',
                 positioner: function () {
-                    return { x: 0, y: 250 };
+                    return { x: 10, y: 250 };
                 }
             },
           
@@ -97,6 +101,7 @@ $.each(countries, function (i, val) {
                 min: 1,
                 max: 1000,
                 type: 'logarithmic'
+				
             },
 
             series : [{

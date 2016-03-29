@@ -1,0 +1,39 @@
+
+
+
+
+#indice{
+background-color:silver;
+width:600px;
+float:right;
+height: 4%;
+border-top: 2px solid transparent;
+border-right: 2px solid transparent; 	
+}
+
+
+#temps{
+background-color:silver;
+width:120px;
+float:left;
+display: block; 
+height: 4%;
+border-top: 2px solid transparent;
+border-right: 2px solid transparent; 
+}
+
+
+
+#content{
+
+padding-top:120px;
+
+	
+}
+
+#container{
+	title:{
+		float:left;
+	}
+	
+}
